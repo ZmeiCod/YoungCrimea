@@ -1,0 +1,148 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Цветовая палитра */
+:root {
+  --dark-blue: #15233c; /* Тёмно-синий фон */
+  --accent-blue: #00a3ef; /* Акцентный синий */
+  --light-gray: #101d30; /* Светлый фон строк */
+  --text-white: #ffffff; /* Белый текст */
+  --green-up: #4cd964; /* Зелёный для роста */
+  --red-down: #ff5252; /* Красный для падения */
+  --border-color: #2a3852; /* Цвет границы */
+  --shadow-color: rgba(42, 56, 82, 0.3); /* Цвет тени */
+}
+
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Контейнер таблицы */
+.table-container {
+  background: var(--dark-blue);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Таблица */
+.rich-people-table {
+  width: 100%;
+  border-collapse: separate; /* Для отступов между строками */
+  border-spacing: 0 8px; /* Отступы между строками: 8px снизу/сверху */
+  font-family: 'Helvetica', sans-serif;
+  color: var(--text-white);
+}
+
+/* Заголовок таблицы */
+.table-header th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: bold;
+  color: var(--accent-blue);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-header th:first-child {
+  width: 50px;
+}
+
+/* Тело таблицы */
+.rich-people-table tbody tr {
+  transition: all 0.3s ease;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rich-people-table tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+  z-index: 1;
+  position: relative;
+  background-color: #2a3852
+}
+
+.rich-people-table .even-row {
+  background-color: var(--light-gray);
+}
+
+
+
+/* Ячейки */
+.rank-cell {
+  width: 50px;
+  padding: 16px;
+  font-weight: bold;
+  color: var(--text-white);
+  border-radius: 8px 0 0 8px;
+}
+
+.person-cell {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.person-cell .person-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-cell .person-info .name {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+.person-cell .person-info .position {
+  font-size: 14px;
+  color: #c9d1d6;
+}
+
+.wealth-cell {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  color: var(--text-white);
+}
+
+.wealth-cell .currency,
+.wealth-cell .amount {
+  color: var(--accent-blue);
+}
+
+.wealth-cell .unit {
+  color: #c9d1d6;
+  font-size: 14px;
+}
+
+.status-cell {
+  padding: 16px;
+  text-align: center;
+  border-radius: 0 8px 8px 0;
+}
+
+.status-cell .arrow {
+  font-size: 14px;
+}
+
+.status-cell .arrow.up {
+  color: var(--green-up);
+}
+
+.status-cell .arrow.down {
+  color: var(--red-down);
+}
