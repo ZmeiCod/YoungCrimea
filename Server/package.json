@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "prisma:generate": "npx prisma generate --config prisma/prisma.config.js",
+    "prisma:migrate": "npx prisma migrate dev --config prisma/prisma.config.js",
+    "prisma:studio": "npx prisma studio --config prisma/prisma.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^7.4.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.18.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.4.0"
+  }
+}

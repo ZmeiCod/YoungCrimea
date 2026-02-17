@@ -22,14 +22,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -65,4 +57,34 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Стили для хедера */
+.header {
+  display: flex; /* Используем флексбокс для упрощения выравнивания */
+  align-items: center; /* Центрируем элементы по вертикали */
+  justify-content: space-between; /* Размещаем логотип слева и навигацию по центру */
+  background-color: #001f3f; /* Темно-синий цвет фона */
+  padding: 10px 20px; /* Отступы внутри хедера */
+  color: #ffffff; /* Белый цвет текста */
+  
+}
+
+.logo {
+  font-size: 24px; /* Размер шрифта для логотипа */
+  font-weight: bold; /* Жирный шрифт для логотипа */
+}
+
+.nav {
+  display: flex; /* Используем флексбокс для навигационных элементов */
+  gap: 20px; /* Отступы между навигационными пунктами */
+}
+
+.nav-item {
+  cursor: pointer; /* Указатель при наведении на элементы навигации */
+  transition: color 0.3s; /* Анимация при наведении */
+}
+
+.nav-item:hover {
+  color: #aab8ff; /* Цвет элемента при наведении */
 }

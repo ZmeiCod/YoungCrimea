@@ -7,7 +7,7 @@ export default function Fetch() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/random.json") // Укажите корректный путь к вашему JSON
+    fetch("/random.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Ошибка загрузки JSON");

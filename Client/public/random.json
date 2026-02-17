@@ -4,34 +4,39 @@
     "name": "Вагит Алекперов",
     "position": "Председатель Общественного совета Фонда «Наше будущее»",
     "wealth": "28700",
-    "status": "up"
+    "status": "up",
+    "avatar": "https://cdn.forbes.ru/files/c/232x232/profile/me2.jpg__1619007683__89726.jpg"
   },
   {
     "id": 2,
     "name": "Алексей Мордашов и семья",
     "position": "Генеральный директор холдинга «Севергрупп»",
     "wealth": "28600",
-    "status": "down"
+    "status": "down",
+    "avatar": "https://cdn.forbes.ru/files/c/232x232/profile/pot-s.jpg__1619006454__61064.webp"
   },
   {
     "id": 3,
     "name": "Леонид Михельсон и семья",
     "position": "Председатель правления ПАО «Новатэк»",
     "wealth": "28400",
-    "status": "up"
+    "status": "up",
+    "avatar": "https://cdn.forbes.ru/files/c/393x232/forbes_import/de/deripaska_8.webp"
   },
   {
     "id": 4,
     "name": "Владимир Лисин",
     "position": "Председатель правления Национальной федерации спортинга",
     "wealth": "26500",
-    "status": "up"
+    "status": "up",
+    "avatar": "https://cdn.forbes.ru/files/c/232x232/profile/39-pavel-durov-182-05_2019.jpg__1555317023__31719.webp"
   },
   {
     "id": 5,
     "name": "Владимир Потанин",
     "position": "Президент холдинга «Интеррос», президент ГМК «Норильский никель»",
     "wealth": "24200",
-    "status": "down"
+    "status": "down",
+    "avatar": "https://cdn.forbes.ru/files/c/362x232/profile/19-182_05_2019.jpg__1555272017__87207.jpg"
   }
 ]

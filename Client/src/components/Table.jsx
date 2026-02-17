@@ -22,6 +22,18 @@ const RichPeopleTable = ({ data }) => {
                 <span className="rank">{index + 1}.</span>
               </td>
               <td className="person-cell">
+                <div className="avatar-container">
+                  <img
+                    src={person.avatar}
+                    alt={person.name}
+                    className="avatar"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      // Можно добавить запасной текст или изображение:
+                      // e.target.alt = 'Фото отсутствует';
+                    }}
+                  />
+                </div>
                 <div className="person-info">
                   <h3 className="name">{person.name}</h3>
                   <p className="position">{person.position}</p>

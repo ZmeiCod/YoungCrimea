@@ -2,12 +2,14 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div>
-      <div>Логотип</div>
-      <div>Главная</div>
-      <div>Новости</div>
-      <div>Рейтинг</div>
-      <div>Мероприятия</div>
-    </div>
+    <header className="header">
+      <div className="logo">Молодой Крым</div>
+      <nav className="nav">
+        <div className="nav-item">Главная</div>
+        <div className="nav-item">Новости</div>
+        <div className="nav-item">Рейтинг</div>
+        <div className="nav-item">Мероприятия</div>
+      </nav>
+    </header>
   );
 }
