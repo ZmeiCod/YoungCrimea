@@ -8,11 +8,61 @@ datasource db {
 }
 
 model User {
-  id          Int       @id @default(autoincrement())
-  name        String    @db.VarChar(255)
-  email       String    @unique @db.VarChar(255)
-  password    String    @db.VarChar(255)
-  refreshToken String?   @db.VarChar(500)
+  id           Int        @id @default(autoincrement())
+  email        String     @unique
+  name         String?
+  passwordHash String     // Хэш пароля (никогда не храните plaintext!)
+  refreshToken String?    // Токен для обновления сессии
+  role         Role       @default(USER)
+  avatarUrl    String?    // Ссылка на фото профиля
+  
+  // Связи
+  profile      Profile?   @relation(fields: [profileId], references: [id])
+  profileId    Int?       @unique
+  posts        Post[]
+  events       Event[]
+  
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Profile {
+  id             Int        @id @default(autoincrement())
+  userId         Int        @unique
+  moneyMillion   Float      @default(0) // Сумма в млн
+  property       String?    // Описание имущества
+  user           User       @relation(fields: [userId], references: [id])
+  
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+}
+
+model Post {
+  id         Int        @id @default(autoincrement())
+  title      String
+  content    String
+  imageUrl   String?    // Ссылка на изображение поста
+  author     User       @relation(fields: [authorId], references: [id])
+  authorId   Int
+  
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+}
+
+model Event {
+  id          Int        @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String?   // Ссылка на изображение мероприятия
+  date        DateTime  // Дата и время мероприятия
+  organizer   User      @relation(fields: [organizerId], references: [id])
+  organizerId Int
+  
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 }

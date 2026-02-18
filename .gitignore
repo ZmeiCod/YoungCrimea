@@ -23,8 +23,6 @@ dist-ssr
 /generated/prisma
 
 # Off
-.dockerignore
-docker-compose.yml
 client/Dockerfile
 client/nginx.conf
 TODO.md

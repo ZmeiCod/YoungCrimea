@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # frontend:
+  #   container_name: client
+  #   build: ./Client
+  #   ports:
+  #     - "3000:80"
+  #   networks:
+  #     - backend
+
+  # backend:
+  #   container_name: server
+  #   build: ./Server
+  #   ports:
+  #     - "5000:5000"
+
+  db:
+    container_name: postgres
+    image: postgres:17.0
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data 
+    networks:
+      - backend
+
+  redis:
+    container_name: redis
+    image: redis:7.0
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data 
+    networks:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  backend:

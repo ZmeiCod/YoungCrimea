@@ -5,7 +5,34 @@
     <img src="https://img.shields.io/badge/-Exspress_JS-black?style=for-the-badge&logo=javascript" alt="exspress" />
     <img src="https://img.shields.io/badge/-PostgreSQL-black?style=for-the-badge&logoColor=white&logo=postgresql&color=4169E1" alt="postgresql" />
   <br />
+  <br />
 </div>
 
 + JWT
 + Prisma
++ Redis
++ Docker
+
+```env
+NODE_ENV=
+
+APPLOCATION_PORT=
+APPLOCATION_URL=
+ALLOWED_ORIGIN=
+
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=
+POSTGRES_PORT=
+POSTGRES_DB=
+POSTGRES_URI=
+
+REDIS_USER=
+REDIS_PASSWORD=
+REDIS_HOST=
+REDIS_PORT=
+REDIS_URI=
+
+JWT_ACCESS_SECRET=
+JWT_REFRESH_SECRET=
+```
