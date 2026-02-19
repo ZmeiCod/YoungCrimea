@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "prisma:generate": "npx prisma generate --config prisma/prisma.config.js",
-    "prisma:migrate": "npx prisma migrate dev --config prisma/prisma.config.js",
-    "prisma:studio": "npx prisma studio --config prisma/prisma.config.js"
+    "prisma:generate": "node prisma.config.js && npx prisma generate",
+    "prisma:migrate": "node prisma.config.js && npx prisma migrate dev",
+    "prisma:push": "node prisma.config.js && npx prisma db push",
+    "prisma:studio": "node prisma.config.js && npx prisma studio"
   },
   "keywords": [],
   "author": "",

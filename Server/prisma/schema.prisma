@@ -1,29 +1,10 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-}
-
-model User {
-  id           Int        @id @default(autoincrement())
-  email        String     @unique
-  name         String?
-  passwordHash String     // Хэш пароля (никогда не храните plaintext!)
-  refreshToken String?    // Токен для обновления сессии
-  role         Role       @default(USER)
-  avatarUrl    String?    // Ссылка на фото профиля
-  
-  // Связи
-  profile      Profile?   @relation(fields: [profileId], references: [id])
-  profileId    Int?       @unique
-  posts        Post[]
-  events       Event[]
-  
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  url      = env("DATABASE_URL")
 }
 
 enum Role {
@@ -31,38 +12,14 @@ enum Role {
   ADMIN
 }
 
-model Profile {
-  id             Int        @id @default(autoincrement())
-  userId         Int        @unique
-  moneyMillion   Float      @default(0) // Сумма в млн
-  property       String?    // Описание имущества
-  user           User       @relation(fields: [userId], references: [id])
-  
-  createdAt      DateTime   @default(now())
-  updatedAt      DateTime   @updatedAt
-}
-
-model Post {
-  id         Int        @id @default(autoincrement())
-  title      String
-  content    String
-  imageUrl   String?    // Ссылка на изображение поста
-  author     User       @relation(fields: [authorId], references: [id])
-  authorId   Int
-  
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-}
-
-model Event {
-  id          Int        @id @default(autoincrement())
-  title       String
-  description String
-  imageUrl    String?   // Ссылка на изображение мероприятия
-  date        DateTime  // Дата и время мероприятия
-  organizer   User      @relation(fields: [organizerId], references: [id])
-  organizerId Int
-  
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+model User {
+  id           Int        @id @default(autoincrement())
+  email        String     @unique
+  name         String?
+  passwordHash String
+  refreshToken String?
+  role         Role       @default(USER)
+  avatarUrl    String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
 }
